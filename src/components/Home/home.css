@@ -1,0 +1,13 @@
+.category {
+    flex-basis: 20%;
+    margin-right: 20px;
+    height: 100%;
+}
+
+.card-item {
+    width: 48%;
+}
+
+.products-container {
+    flex-basis: 80%; 
+}
