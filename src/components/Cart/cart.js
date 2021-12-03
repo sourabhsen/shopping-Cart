@@ -123,6 +123,11 @@ function Cart({removeItem, addQuantity, subtractQuantity, items, total, count}) 
         {/*Grid column*/}
         <div className="col-lg-8">
           {/* Card */}
+          <div className="pb-3">
+          <Link to="/home">
+            Back
+          </Link>
+          </div>
           <div className="mb-3">
             <div className="pt-4 wish-list">
               <h5 className="mb-4">

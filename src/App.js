@@ -35,6 +35,10 @@ function App() {
                   updateTitle={updateTitle}
                 />
               </Route>
+
+              <Route path="/" exact={true}>
+                back
+              </Route>
               <Route path="/login">
                 <LoginForm
                   showError={updateErrorMessage}

@@ -1,12 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter, useParams } from "react-router-dom";
+import { withRouter, useParams, Link } from "react-router-dom";
 
 function ProductDetail({ items, updateTitle }) {
   let { id } = useParams();
   let currentItem = items.find((item) => item.id === parseInt(id));
   return (
     <div className="container">
+      <div className="pb-3 ml-3">
+      <Link to="/home">
+        Back
+      </Link>
+      </div>
       <section className="mb-5">
         <div className="row">
           <div className="col-md-6 mb-4 mb-md-0">
