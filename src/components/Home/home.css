@@ -4,10 +4,14 @@
     height: 100%;
 }
 
-.card-item {
-    width: 48%;
-}
-
 .products-container {
     flex-basis: 80%; 
+}
+
+.card-title {
+    position: absolute;
+    bottom: 212px;
+    font-weight: bold;
+    padding-left: 22px;
+    text-transform: capitalize;
 }

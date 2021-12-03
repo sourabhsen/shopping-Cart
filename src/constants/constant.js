@@ -24,16 +24,16 @@ export const initState = {
         img: Item1,
         images:[
             {
-                url:'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg'
+                url: Item1
             },
             {
-                url:'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg'
+                url:Item2
             }, 
             {
-                url:'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg'
+                url:Item3
             },
             {
-                url:'https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg'
+                url:Item4
             }
         ]
       },
@@ -44,7 +44,20 @@ export const initState = {
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 80,
         img: Item2,
-        images:[],
+        images:[
+          {
+              url: Item2
+          },
+          {
+              url:Item1
+          }, 
+          {
+              url:Item3
+          },
+          {
+              url:Item4
+          }
+      ]
       },
       {
         id: 3,
@@ -53,7 +66,20 @@ export const initState = {
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 120,
         img: Item3,
-        images:[],
+        images:[
+          {
+              url: Item3
+          },
+          {
+              url:Item2
+          }, 
+          {
+              url:Item1
+          },
+          {
+              url:Item4
+          }
+      ]
       },
       {
         id: 4,
@@ -62,7 +88,20 @@ export const initState = {
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 260,
         img: Item4,
-        images:[],
+        images:[
+          {
+              url: Item4
+          },
+          {
+              url:Item2
+          }, 
+          {
+              url:Item3
+          },
+          {
+              url:Item1
+          }
+      ]
       },
       {
         id: 5,
@@ -71,7 +110,21 @@ export const initState = {
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 160,
         img: Item5,
-        images:[],
+        images:[
+          {
+              url: Item5
+          },
+          {
+              url:Item2
+          }, 
+          {
+              url:Item3
+          },
+          {
+              url:Item4
+          }
+          
+      ]
       },
       {
         id: 6,

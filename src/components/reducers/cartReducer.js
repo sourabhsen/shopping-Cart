@@ -49,6 +49,7 @@ const cartReducer = (state = initState, action) => {
       ...state,
       addedItems: new_items,
       total: newTotal,
+      cartItemCount: getCartItemCount(new_items)
     };
   }
   //INSIDE CART COMPONENT
@@ -59,6 +60,7 @@ const cartReducer = (state = initState, action) => {
     return {
       ...state,
       total: newTotal,
+      cartItemCount: getCartItemCount(state.addedItems)
     };
   }
   if (action.type === SUB_QUANTITY) {
@@ -71,6 +73,7 @@ const cartReducer = (state = initState, action) => {
         ...state,
         addedItems: new_items,
         total: newTotal,
+        cartItemCount: getCartItemCount(new_items)
       };
     } else {
       addedItem.quantity -= 1;
@@ -78,6 +81,7 @@ const cartReducer = (state = initState, action) => {
       return {
         ...state,
         total: newTotal,
+        cartItemCount: getCartItemCount(state.addedItems)
       };
     }
   }

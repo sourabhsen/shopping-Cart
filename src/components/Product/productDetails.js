@@ -1,8 +1,8 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { withRouter, Link, useParams } from "react-router-dom";
+import { withRouter, useParams } from "react-router-dom";
 
-function ProductDetail({ history, items }) {
+function ProductDetail({ items }) {
   let { id } = useParams();
   let currentItem = items.find((item) => item.id === parseInt(id));
   return (
@@ -29,6 +29,7 @@ function ProductDetail({ history, items }) {
                             style={{ display: index ? "none" : "block" }}
                           >
                             <img
+                              alt={element.title}
                               src={element.url}
                               className="img-fluid z-depth-1"
                             />
@@ -43,17 +44,16 @@ function ProductDetail({ history, items }) {
                     <div className="row">
                       {currentItem.images.map((element, index) => {
                         return (
-                          
                             <div className="col-3">
                               <div className="view overlay rounded z-depth-1 gallery-item">
                                 <img
+                                  alt={element.title}
                                   src={element.url}
                                   className="img-fluid"
                                 />
                                 <div className="mask rgba-white-slight"></div>
                               </div>
                             </div>
-                          
                         );
                       })}
                     </div>
@@ -67,21 +67,21 @@ function ProductDetail({ history, items }) {
             <p className="mb-2 text-muted text-uppercase small">
               {currentItem.type}
             </p>
-            <ul className="rating">
-              <li>
-                <i className="fas fa-star fa-sm text-primary"></i>
+            <ul className="p-0 d-flex">
+              <li className="list-group list-group-horizontal">
+              <i className="bi bi-star-fill"></i>
               </li>
-              <li>
-                <i className="fas fa-star fa-sm text-primary"></i>
+              <li className="list-group list-group-horizontal">
+              <i className="bi bi-star-fill"></i>
               </li>
-              <li>
-                <i className="fas fa-star fa-sm text-primary"></i>
+              <li className="list-group list-group-horizontal">
+              <i className="bi bi-star-fill"></i>
               </li>
-              <li>
-                <i className="fas fa-star fa-sm text-primary"></i>
+              <li className="list-group list-group-horizontal">
+              <i className="bi bi-star-fill"></i>
               </li>
-              <li>
-                <i className="far fa-star fa-sm text-primary"></i>
+              <li className="list-group list-group-horizontal">
+              <i className="bi bi-star-fill"></i>
               </li>
             </ul>
             <p>
@@ -123,19 +123,7 @@ function ProductDetail({ history, items }) {
                     <td className="pb-0">Select size</td>
                   </tr>
                   <tr>
-                    <td className="pl-0">
-                      <div className="def-number-input number-input safari_only mb-0">
-                        <button className="minus btn"><i className="bi bi-patch-minus-fill"></i></button>
-                        <input
-                          className="quantity"
-                          min="0"
-                          name="quantity"
-                          value="1"
-                          type="number"
-                        />
-                        <button className="btn "><i className="bi bi-patch-plus-fill"></i></button>
-                      </div>
-                    </td>
+                    
                     <td>
                       <div className="mt-1">
                         <div className="form-check form-check-inline pl-0">
@@ -187,12 +175,7 @@ function ProductDetail({ history, items }) {
                 </tbody>
               </table>
             </div>
-            <button type="button" className="btn btn-primary btn-md mr-1 mb-2">
-              Buy now
-            </button>
-            <button type="button" className="btn btn-light btn-md mr-1 mb-2">
-              <i className="fas fa-shopping-cart pr-2"></i>Add to cart
-            </button>
+           
           </div>
         </div>
       </section>
