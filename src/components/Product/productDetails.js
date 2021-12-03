@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter, useParams } from "react-router-dom";
 
-function ProductDetail({ items }) {
+function ProductDetail({ items, updateTitle }) {
   let { id } = useParams();
   let currentItem = items.find((item) => item.id === parseInt(id));
   return (
@@ -15,8 +15,8 @@ function ProductDetail({ items }) {
                 <div className="col-12 mb-0">
                   {currentItem.images.map((element, index) => {
                     return (
-                      
-                        <figure
+                        <figure 
+                          key={`detail-${index}`}
                           className={
                             index
                               ? "view overlay rounded z-depth-1"
@@ -86,7 +86,7 @@ function ProductDetail({ items }) {
             </ul>
             <p>
               <span className="mr-1">
-                <strong>{`$${currentItem.price}`}</strong>
+                <strong>{`${currentItem.price}`}</strong>
               </span>
             </p>
             <p className="pt-1">{currentItem.desc}</p>

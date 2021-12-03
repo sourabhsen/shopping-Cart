@@ -23,7 +23,7 @@ function App() {
       <Router>
         <div className="App">
           <Header title={title} />
-          <div className="container d-flex align-items-center flex-column py-5">
+          <div className="container-fluid d-flex align-items-center flex-column py-5">
             <AlertComponent
               errorMessage={errorMessage}
               hideError={updateErrorMessage}
@@ -43,6 +43,7 @@ function App() {
               </Route>
               <Route path="/product-detail/:id">
                 <ProductDeatil
+                  title={title}
                   showError={updateErrorMessage}
                   updateTitle={updateTitle}
                 />

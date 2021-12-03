@@ -1,5 +1,5 @@
 
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY} from './action-types/cart-actions'
+import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY, RESET_TO_CART} from './action-types/cart-actions'
 
 //add cart action
 export const addToCart= (id)=>{
@@ -27,5 +27,11 @@ export const addQuantity=(id)=>{
     return{
         type: ADD_QUANTITY,
         id
+    }
+}
+//Reset cart action
+export const resetToCart= ()=>{
+    return{
+        type: RESET_TO_CART
     }
 }

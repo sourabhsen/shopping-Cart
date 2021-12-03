@@ -1,8 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { resetToCart } from '../actions/cartActions'
 
-function Checkout({items, total, count}) {
-  
+function Checkout({items, total, resetCart, history}) {
+  const handleHomeRedirection = () => {
+    resetCart();
+    history.push('/home')
+  }
+
   let addedItems = items.length ? (
     items.map((item) => {
       return (
@@ -108,7 +114,7 @@ function Checkout({items, total, count}) {
                     <p>We will be sending shipping confirmation email when the item shipped successfully!</p>
                     <p className="font-weight-bold mb-0">Thanks for shopping with us!</p> <span>Team</span>
                 </div>
-                <button className=" text-center justify-content-center btn btn-primary col-sm-4 mb-2">More Shopping</button>
+                <button onClick={() => handleHomeRedirection()} className=" text-center btn btn-primary col-sm-4 mb-2" style={{margin:'0 auto'}}>More Shopping</button>
             </div>
         </div>
     </div>
@@ -124,4 +130,13 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Checkout);
+const mapDispatchToProps = (dispatch) => {
+    return {
+      resetCart: (id) => {
+        dispatch(resetToCart(id));
+      },
+    };
+  };
+  
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Checkout));

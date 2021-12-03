@@ -3,13 +3,11 @@ import Item2 from "../images/item2.jpg";
 import Item3 from "../images/item3.jpg";
 import Item4 from "../images/item4.jpg";
 import Item5 from "../images/item5.jpg";
-import Item6 from "../images/item6.jpg";
-import Item7 from "../images/item6.jpg";
-import Item8 from "../images/item6.jpg";
-import Item9 from "../images/item4.jpg";
-import Item10 from "../images/item6.jpg";
-import Item11 from "../images/item6.jpg";
-import Item12 from "../images/item1.jpg";
+import Item12 from "../images/item7.jpeg";
+const Item8 = "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg";
+const Item9 = "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg";
+
+
 
 export const ACCESS_TOKEN_NAME = 'login_access_token';
 
@@ -132,7 +130,7 @@ export const initState = {
         type: "clothes",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 90,
-        img: Item6,
+        img: Item8,
         images:[],
       },
       {
@@ -141,7 +139,7 @@ export const initState = {
         type: "clothes",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 90,
-        img: Item7,
+        img: Item8,
         images:[],
       },
       {
@@ -168,16 +166,16 @@ export const initState = {
         type: "electronics",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 90,
-        img: Item10,
+        img: Item12,
         images:[],
       },
       {
         id: 11,
-        title: "headphone",
+        title: "phone",
         type: "electronics",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 90,
-        img: Item11,
+        img: Item12,
         images:[],
       },
       {
@@ -195,16 +193,16 @@ export const initState = {
         type: "electronics",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 90,
-        img: Item10,
+        img: Item12,
         images:[],
       },
       {
         id: 14,
-        title: "charger",
+        title: "tablet",
         type: "electronics",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
         price: 90,
-        img: Item11,
+        img: Item12,
         images:[],
       },
       {

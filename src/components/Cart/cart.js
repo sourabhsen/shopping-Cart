@@ -207,8 +207,6 @@ function Cart({removeItem, addQuantity, subtractQuantity, items, total, count}) 
               <Link to="/checkout">
                <button className="btn btn-primary">Placed your Order</button>
               </Link>
-               
-             
             </div>
           </div>
           {/* Card */}
@@ -227,7 +225,6 @@ const mapStateToProps = (state) => {
     items: state.addedItems,
     count: state.cartItemCount,
     total: state.total,
-    //addedItems: state.addedItems
   };
 };
 const mapDispatchToProps = (dispatch) => {

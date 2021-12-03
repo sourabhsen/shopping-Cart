@@ -10,7 +10,7 @@ function Header({ title, location, history, count }) {
   };
 
   const showFullHeader = () => {
-    return ["home", "cart", "product-detail"].find(
+    return ["home", "cart", "product-detail","checkout"].find(
       (name) => location.pathname.indexOf(name) > -1
     );
   };
@@ -21,6 +21,9 @@ function Header({ title, location, history, count }) {
 
   if (location.pathname === "/login" || location.pathname === "/") {
     title = "Welcome";
+  }
+  if (location.pathname.indexOf('product-detail') > -1) {
+    title = "Product-Details";
   }
 
   function renderLogout() {

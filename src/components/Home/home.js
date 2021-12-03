@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../actions/cartActions";
@@ -7,9 +7,12 @@ import "./home.css";
 function Home({ addToCart, items }) {
   const [productList, setProductList] = useState(items);
 
-  const handleClick = (id) => {
-    addToCart(id);
-  };
+  const handleClick = useCallback(
+    (id) => {
+      addToCart(id);
+    },
+    [addToCart]
+  );
 
   const filterItem = (type) => {
     const filterList =
@@ -46,32 +49,10 @@ function Home({ addToCart, items }) {
     setProductList(filterList);
   };
 
-  const getItems = () => {
+  const getItems = useMemo(() => {
     return productList.map((item) => {
       return (
-        // <div className="card card-item" key={item.id}>
-        //   <div className="card-image">
-        //     <img src={item.img} alt={item.title} />
-        //     <span className="card-title">{item.title}</span>
-        //     <span
-        //       to="/"
-        //       className="btn-floating halfway-fab waves-effect waves-light red"
-        //       onClick={() => {
-        //         handleClick(item.id);
-        //       }}
-        //     >
-        //       <i className="bi bi-plus">add</i>
-        //     </span>
-        //   </div>
-        //   <div className="card-content">
-        //     <p>{item.desc}</p>
-        //     <p>
-        //       <b>Price: {item.price}$</b>
-        //     </p>
-        //     <p>  <Link to={`/product-detail/${item.id}`}>More Details</Link></p>
-        //   </div>
-        // </div>
-        <div className="col-sm-6 mb-2" key={item.id}>
+        <div className="col-sm-4 mb-2" key={item.id}>
           <div className="card shadow-sm">
             <img src={item.img} alt={item.title} />
             <label className="card-title">{item.title}</label>
@@ -80,9 +61,12 @@ function Home({ addToCart, items }) {
               <p className="card-text">Price: {item.price}$</p>
               <div className="d-flex justify-content-between align-items-center">
                 <div className="btn-group">
-                  <button className="btn" onClick={() => {
+                  <button
+                    className="btn"
+                    onClick={() => {
                       handleClick(item.id);
-                    }}>
+                    }}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="50"
@@ -94,22 +78,21 @@ function Home({ addToCart, items }) {
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
                     </svg>
                   </button>
-                  
                 </div>
                 <p>
-                    {" "}
-                    <Link to={`/product-detail/${item.id}`}>More Details</Link>
-                  </p>
+                  {" "}
+                  <Link to={`/product-detail/${item.id}`}>More Details</Link>
+                </p>
               </div>
             </div>
           </div>
         </div>
       );
     });
-  };
+  }, [handleClick, productList]);
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <h3 className="text-center">Our items</h3>
       <div className="card-wrapper d-flex justify-content-between">
         <div className="card category">
@@ -148,7 +131,7 @@ function Home({ addToCart, items }) {
             </li>
           </ul>
         </div>
-        <div className="box products-container">{getItems()}</div>
+        <div className="box products-container">{getItems}</div>
       </div>
     </div>
   );

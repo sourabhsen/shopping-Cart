@@ -1,6 +1,6 @@
 # Basic e-commerce cart application built with React & Redux
 
-This simple application prototype shows how we can use React and Redux to build a friendly user experience with instant visual updates.
+This simple shopping cart application prototype shows how we can use React and Redux to build a friendly user experience with instant visual updates.
 
 ## Demo
 
@@ -11,6 +11,10 @@ This simple application prototype shows how we can use React and Redux to build 
 * Calculate automatically the total including the shipping (if chosen)
 
 # Getting started
+
+Login Details:
+- Enter Valid emails otherwise throws error // mortex22.pi@example.org
+- Enter any character length more than 6 // 1234566
 ### Requirements
 
 * Node.js

@@ -5,6 +5,7 @@ import {
   SUB_QUANTITY,
   ADD_QUANTITY,
   ADD_SHIPPING,
+  RESET_TO_CART
 } from "../actions/action-types/cart-actions"
 import { initState } from '../../constants/constant'
 
@@ -51,6 +52,13 @@ const cartReducer = (state = initState, action) => {
       total: newTotal,
       cartItemCount: getCartItemCount(new_items)
     };
+  }
+  if (action.type === RESET_TO_CART) {
+      return {
+        ...state,
+        total: 0,
+        cartItemCount: 0
+      };
   }
   //INSIDE CART COMPONENT
   if (action.type === ADD_QUANTITY) {
